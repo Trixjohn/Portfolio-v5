@@ -27,19 +27,18 @@ export default function CustomCursor() {
     }
     containerRef.current = container;
 
-    const isTouch =
-      window.matchMedia("(pointer: coarse)").matches ||
-      navigator.maxTouchPoints > 0 ||
-      "ontouchstart" in window;
+    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+    const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    const isTouchOnly = hasCoarsePointer && !hasFinePointer;
 
     const setCursorVisible = (visible: boolean) => {
       if (cursorRef.current) cursorRef.current.style.display = visible ? "block" : "none";
       if (containerRef.current) containerRef.current.style.display = visible ? "block" : "none";
     };
 
-    isMobileRef.current = isTouch;
-    isActiveRef.current = !isTouch;
-    setCursorVisible(!isTouch);
+    isMobileRef.current = isTouchOnly;
+    isActiveRef.current = true;
+    setCursorVisible(!isTouchOnly);
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!isActiveRef.current) return;

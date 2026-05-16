@@ -19,9 +19,9 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="bg-[#0a0a0a] text-white min-h-screen relative">
+    <main className="bg-[#0a0a0a] text-white min-h-screen relative overflow-hidden">
       {/* SUBTLE GLOW */}
-      <div className="absolute top-[-300px] left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-[-300px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[180px] pointer-events-none" />
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-16 sm:px-8 sm:py-20 space-y-24 sm:space-y-32">
