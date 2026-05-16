@@ -31,4 +31,6 @@ html {
 body {
   background: #050505;
   margin: 0;
+  zoom: 0.8;
+  transform-origin: top center;
 }
