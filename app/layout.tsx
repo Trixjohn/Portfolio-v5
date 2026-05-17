@@ -5,7 +5,7 @@ import CustomCursor from "./CustomCursor";
 const sora = Sora({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Trix Portfolio",
+  title: "Zentrix ",
   description: "Student Dev",
 };
 
